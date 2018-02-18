@@ -5,13 +5,8 @@ ul{
 
 .top-bar{
     background-image: url("../img/background.jpg");
-    z-index: 2;
 }
 
-.image-bar{
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
 
 .logo{
     margin-top: 8%;
@@ -33,7 +28,7 @@ ul{
 }
 
 
-
+/*hidden so that it doesnt show before user inputs city*/
 #cuisine_box{
     visibility: hidden;
 }

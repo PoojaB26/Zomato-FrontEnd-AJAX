@@ -2,21 +2,22 @@ $(document).ready(function () {
     $('#submit-query').click(function () {
 
 
-        /*Stage 4*/
+        /*These lines of code will refresh UI when user inputs a new city when the result of previous city is already displayed */
         $('#cuisines').empty();
         $('#cuisine_box').css('visibility', 'hidden');
         $('#restaurant_container').empty();
-        /*Stage 4*/
+        /*End*/
 
+        /*fetch user input from the input box and call function*/
         var locationInput = document.getElementById('loc').value;
         console.log(locationInput);
-
         call_LocationAPI(locationInput);
     })
 
 
 /*Functions*/
 
+    /*this function calls the /location API endpoint that returns an entity ID and entity type to any area/city that user inputs*/
     function call_LocationAPI(location){
         $.ajax({
                 headers: {
@@ -39,6 +40,8 @@ $(document).ready(function () {
         )
     }
 
+    /*this function calls /location_details API endpoint where you request the endpoint with your entity ID and type
+    * and API responds with top rated restaurants, top cuisines and other information*/
 
     function getLocationDetails(entity_id, entity_type){
         $.ajax(
@@ -49,6 +52,7 @@ $(document).ready(function () {
                 },
                 url: "https://developers.zomato.com/api/v2.1/location_details?entity_id="+entity_id+"&entity_type="+entity_type,
                 success: function (result) {
+                    //just sending the entire result to displayData function
                     displayData(result);
                 }
             }
@@ -56,6 +60,7 @@ $(document).ready(function () {
     }
 
 
+    /*this function does the work of showing the data in UI*/
     function displayData(result){
         console.log(result);
         var cuisines = result.top_cuisines;
@@ -63,10 +68,10 @@ $(document).ready(function () {
 
         /*Fetching cuisines*/
 
-        $('#cuisine_box').css('visibility', 'visible');
+        $('#cuisine_box').css('visibility', 'visible'); //making cuisine_box visible
         for(var i=0; i<cuisine_length; i++){
             console.log(cuisines[i]);
-            $('#cuisines').append(cuisines[i]+"<br>");
+            $('#cuisines').append(cuisines[i]+"<br>"); //appending each cuisines[i] at the end of the previous
         }
 
         /*Fetching restaurants*/
@@ -76,6 +81,7 @@ $(document).ready(function () {
 
         for(var i=0; i<rest_length; i++){
             console.log(restaurants[i].restaurant.name);
+            /*Creating the restaurant card UI dynamically for each restaurant*/
             $('#restaurant_container').append(
             '<div class="card text-left">'+
                 '<div class="card-header">'+
