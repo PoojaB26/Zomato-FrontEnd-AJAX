@@ -21,3 +21,13 @@
     padding-right: 0.5%;
     padding-left: 0;
 }
+
+#card-header-style{
+    color:#dc3545;
+    font-weight: bold;
+}
+
+ul{
+    list-style-type: none;
+    padding:0;
+}

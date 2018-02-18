@@ -10,31 +10,70 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/design.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     </head>
     <body>
-    <div class="">
         <div class=" container-fluid top-bar">
 
             <div class="image-bar container text-center">
                 <img src="zomato_logo.png" width="15%" class="logo">
                 <h3 style="color: white">Find the best restaurants, cafes and bars</h3>
 
-
                 <div class="row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8 padding-0">
                         <div class="form-group">
-                            <input type="text" class="form-control" class="location" placeholder="Search for city, area...">
+                            <input type="text" class="form-control" class="location" id="loc" placeholder="Search for city, area...">
                         </div>
                     </div>
 
                     <div class="col-sm-2 padding-0">
-                        <input type="button" class="btn btn-danger" value="Submit">
+                        <input type="button" id="submit-query" class="btn btn-danger" value="Submit">
                     </div>
                 </div>
             </div>
+        </div>
+
+
+        <div class="container text-center">
+            <div class="row">
+                <!--Top Cuisine-->
+                <div class="col-sm-3">
+                    <div class="card text-left">
+                        <div class="card-header" id="card-header-style">
+                            Top Cuisines
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="cuisine-container">
+                                <li> Hi   </li>
+                            </ul>
+                           <!-- Lorem Ipsum<br>
+                            Lorem Ipsum <br>
+                            Lorem Ipsum<br>-->
+                        </div>
+                    </div>
+                </div>
+                <!--End of Top Cuisine-->
+
+                <!--Restaurant List-->
+                <div class="col-sm-6">
+                <div class="card text-left">
+                    <div class="card-header">
+                        Name of Restaurant
+                    </div>
+                    <div class="card-body">
+                        Address:<br>
+                        Cost for two:<br>
+                        Cuisine:<br>
+                    </div>
+                </div>
+                </div>
+                <!--End of Restaurant List-->
+
             </div>
         </div>
+    <script src="js/main.js"></script>
     </body>
 </html>
