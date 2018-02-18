@@ -1,3 +1,8 @@
+ul{
+    list-style-type: none;
+    padding:0;
+}
+
 .top-bar{
     background-image: url("../img/background.jpg");
     z-index: 2;
@@ -27,7 +32,8 @@
     font-weight: bold;
 }
 
-ul{
-    list-style-type: none;
-    padding:0;
+
+
+#cuisine_box{
+    visibility: hidden;
 }
